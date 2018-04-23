@@ -9,10 +9,28 @@ class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    const esaPosts = get(this, 'props.data.allEsaPost.edges')
 
     return (
       <div>
         <Helmet title={siteTitle} />
+        {
+          esaPosts.map(({ node }) => {
+            return <div key={node.number}>
+              <h3
+                style={{
+                  marginBottom: rhythm(1 / 4),
+                }}
+              >
+              <Link style={{ boxShadow: 'none' }} to={`/posts/${node.number}`}>
+                {node.name}
+              </Link>
+              </h3>
+              <small>{node.updated_at}</small>
+              <p dangerouslySetInnerHTML={{ __html: node.body_md }} />
+            </div>
+          })
+        }
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
@@ -40,6 +58,16 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query IndexQuery {
+    allEsaPost {
+      edges {
+        node {
+          number
+          name
+          body_md
+          updated_at
+        }
+      }
+    }
     site {
       siteMetadata {
         title
