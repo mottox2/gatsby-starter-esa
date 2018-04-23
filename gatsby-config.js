@@ -36,6 +36,14 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-source-esa`,
+      options: {
+        accessToken: process.env.ACCESS_TOKEN,
+        teamName: process.env.TEAM_NAME,
+        targetCategory: `public`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
