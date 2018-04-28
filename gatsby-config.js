@@ -15,6 +15,7 @@ module.exports = {
         q: `in:public`
       }
     },
+    `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

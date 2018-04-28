@@ -2,8 +2,11 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
+import styled from 'styled-components'
 
 import { rhythm, scale } from '../utils/typography'
+
+const Wrapper = styled.div``
 
 class PostTemplate extends React.Component {
   render() {
@@ -12,7 +15,7 @@ class PostTemplate extends React.Component {
     const { previous, next } = this.props.pathContext
 
     return (
-      <div>
+      <Wrapper>
         <Helmet title={`${post.name}`} />
         <h1>{post.name}</h1>
         <p
@@ -20,7 +23,7 @@ class PostTemplate extends React.Component {
             ...scale(-1 / 5),
             display: 'block',
             marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
+            marginTop: rhythm(-1)
           }}
         >
           {post.updated_at}
@@ -28,10 +31,10 @@ class PostTemplate extends React.Component {
         <div dangerouslySetInnerHTML={{ __html: post.body_html }} />
         <hr
           style={{
-            marginBottom: rhythm(1),
+            marginBottom: rhythm(1)
           }}
         />
-      </div>
+      </Wrapper>
     )
   }
 }
