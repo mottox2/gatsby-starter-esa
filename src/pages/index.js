@@ -15,31 +15,11 @@ const Cell = styled.div`
   background-color: white;
 `
 
-const UpdatedBy = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 12px;
-`
-
-const Avatar = styled.img`
-  border-radius: 50%;
-  min-width: 30px;
-  width: 30px;
-  height: 30px;
-  margin: 0;
-  margin-right: 8px;
-`
-
-const UpdatedUser = styled.div`
-  font-size: 12px;
-  line-height: 1;
-`
-
-const UpdatedAt = styled.div`
+const Category = styled.div`
+  font-family: lato, sans-serif;
+  margin-bottom: 4px;
   opacity: 0.5;
-  font-size: 10px;
-  line-height: 1;
-  margin-top: 4px;
+  font-size: 14px;
 `
 
 class BlogIndex extends React.Component {
@@ -53,7 +33,7 @@ class BlogIndex extends React.Component {
         {esaPosts.map(({ node }) => {
           return (
             <Cell key={node.number}>
-              <div style={{ fontSize: 14, opacity: 0.5, marginBottom: 8 }}>{node.category}</div>
+              <Category>{node.category}</Category>
               <Link style={{ boxShadow: 'none', color: 'inherit' }} to={`/posts/${node.number}`}>
                 <h3
                   style={{

@@ -7,6 +7,20 @@ Wordpress2016.overrideThemeStyles = () => ({
   },
   body: {
     color: '#3C4A60'
+  },
+  h2: {
+    fontSize: '22px',
+    marginBottom: '1.25rem'
+  },
+  h3: {
+    fontSize: '18px',
+    marginBottom: '1rem'
+  },
+  p: {
+    marginBottom: '1rem'
+  },
+  'h1,h2,h3,h4,h5,h6': {
+    marginTop: '2rem'
   }
 })
 

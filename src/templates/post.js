@@ -10,10 +10,18 @@ import { rhythm, scale } from '../utils/typography'
 
 const Wrapper = styled.div`
   padding: 12px;
+  margin-top: 12px;
 `
 
 const Title = styled.h1`
   font-size: 24px;
+  line-height: 1.4;
+  font-family: -apple-system, 'BlinkMacSystemFont', 'Helvetica Neue', 'Hiragino Sans',
+    '游ゴシック Medium', 'YuGothic', 'Hiragino Kaku Gothic ProN', 'メイリオ', 'Meiryo,sans-serif';
+
+  @media (min-width: 600px) {
+    font-size: 30px;
+  }
 `
 
 const Content = styled.div`
@@ -21,6 +29,13 @@ const Content = styled.div`
   .hidden {
     display: none;
   }
+`
+
+const Category = styled.div`
+  font-family: lato, sans-serif;
+  margin-bottom: 4px;
+  opacity: 0.5;
+  font-size: 14px;
 `
 
 class PostTemplate extends React.Component {
@@ -32,7 +47,8 @@ class PostTemplate extends React.Component {
     return (
       <Wrapper>
         <Helmet title={`${post.name}`} />
-        <Title style={{ marginBottom: 0, marginTop: 12 }}>{post.name}</Title>
+        <Category>{post.category}</Category>
+        <Title style={{ margin: 0 }}>{post.name}</Title>
         <Auther post={post} />
         <Content dangerouslySetInnerHTML={{ __html: post.body_html }} />
         <hr
@@ -57,6 +73,7 @@ export const pageQuery = graphql`
     }
     esaPost(number: { eq: $number }) {
       number
+      category
       name
       wip
       body_html
