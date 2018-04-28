@@ -3845,9 +3845,9 @@ gatsby-react-router-scroll@^1.0.14:
     scroll-behavior "^0.9.9"
     warning "^3.0.0"
 
-gatsby-source-esa@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/gatsby-source-esa/-/gatsby-source-esa-0.1.2.tgz#f0dfe3786a8d2e8704835cbb765a1410d5c82242"
+gatsby-source-esa@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-source-esa/-/gatsby-source-esa-0.2.0.tgz#9b94403bc2d9025fbb7e238a056ab255952eac2a"
   dependencies:
     crypto "^1.0.1"
     frisbee "^1.6.4"

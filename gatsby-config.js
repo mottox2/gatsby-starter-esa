@@ -3,7 +3,7 @@ module.exports = {
     title: 'Gatsby Esa Starter',
     author: 'mottox2',
     description: 'A starter blog pulling data from esa',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/'
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
@@ -12,8 +12,8 @@ module.exports = {
       options: {
         accessToken: process.env.ACCESS_TOKEN,
         teamName: process.env.TEAM_NAME,
-        targetCategory: `public`,
-      },
+        q: `in:public`
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -21,15 +21,15 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
+      }
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
-  ],
+        pathToConfigModule: 'src/utils/typography'
+      }
+    }
+  ]
 }
