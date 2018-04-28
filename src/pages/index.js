@@ -4,12 +4,15 @@ import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
+import Auther from '../components/Auther'
+
 import { rhythm } from '../utils/typography'
 
 const Cell = styled.div`
   padding: 24px;
   border: 1px solid #eee;
   margin-bottom: 24px;
+  background-color: white;
 `
 
 const UpdatedBy = styled.div`
@@ -45,7 +48,7 @@ class BlogIndex extends React.Component {
     const esaPosts = get(this, 'props.data.allEsaPost.edges')
 
     return (
-      <div>
+      <div style={{ paddingTop: 24 }}>
         <Helmet title={siteTitle} />
         {esaPosts.map(({ node }) => {
           return (
@@ -65,13 +68,7 @@ class BlogIndex extends React.Component {
                   dangerouslySetInnerHTML={{ __html: node.body_md.slice(0, 60) }}
                 />
               </Link>
-              <UpdatedBy>
-                <Avatar src={node.updated_by.icon} width="30" height="30" />
-                <div>
-                  <UpdatedUser>{node.updated_by.screen_name}</UpdatedUser>
-                  <UpdatedAt>{node.updated_at}</UpdatedAt>
-                </div>
-              </UpdatedBy>
+              <Auther post={node} />
             </Cell>
           )
         })}
