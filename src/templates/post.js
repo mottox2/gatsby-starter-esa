@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
 import Auther from '../components/Auther'
+import Layout from '../components/Layout'
 
 const Wrapper = styled.div`
   padding: 12px;
@@ -25,6 +26,10 @@ const Content = styled.div`
   .hidden {
     display: none;
   }
+
+  img {
+    max-width: 100%;
+  }
 `
 
 const Category = styled.div`
@@ -39,14 +44,16 @@ class PostTemplate extends React.Component {
     const post = this.props.data.esaPost
 
     return (
-      <Wrapper>
-        <Helmet title={`${post.name}`} />
-        <Category>{post.category}</Category>
-        <Title style={{ margin: 0 }}>{post.name}</Title>
-        <Auther post={post} />
-        <Content dangerouslySetInnerHTML={{ __html: post.body_html }} />
-        <hr />
-      </Wrapper>
+      <Layout>
+        <Wrapper>
+          <Helmet title={`${post.name}`} />
+          <Category>{post.category}</Category>
+          <Title style={{ margin: 0 }}>{post.name}</Title>
+          <Auther post={post} />
+          <Content dangerouslySetInnerHTML={{ __html: post.body_html }} />
+          <hr />
+        </Wrapper>
+      </Layout>
     )
   }
 }
