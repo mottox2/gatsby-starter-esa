@@ -4453,15 +4453,6 @@ gatsby-link@^2.0.12:
     "@types/reach__router" "^1.0.0"
     prop-types "^15.6.1"
 
-gatsby-link@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.0.6.tgz#0a3fc871b4635b817b145d06ed7542b8f49b9c7b"
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-    "@reach/router" "^1.1.1"
-    "@types/reach__router" "^1.0.0"
-    prop-types "^15.6.1"
-
 gatsby-plugin-feed@^2.0.14:
   version "2.0.14"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.0.14.tgz#e2f0b0df85bc3532ead7a37b2eadb2752f3b8d4f"
