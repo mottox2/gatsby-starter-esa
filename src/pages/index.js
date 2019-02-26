@@ -5,8 +5,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
 import Auther from '../components/Auther'
-
-import { rhythm } from '../utils/typography'
+import Layout from '../components/Layout'
 
 const Cell = styled.div`
   padding: 24px;
@@ -28,7 +27,7 @@ class BlogIndex extends React.Component {
     const esaPosts = get(this, 'props.data.allEsaPost.edges')
 
     return (
-      <div style={{ paddingTop: 24 }}>
+      <Layout style={{ paddingTop: 24 }}>
         <Helmet title={siteTitle} />
         {esaPosts.map(({ node }) => {
           return (
@@ -51,7 +50,7 @@ class BlogIndex extends React.Component {
             </Cell>
           )
         })}
-      </div>
+      </Layout>
     )
   }
 }

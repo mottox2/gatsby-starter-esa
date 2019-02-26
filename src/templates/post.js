@@ -1,12 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link } from 'gatsby'
-import get from 'lodash/get'
 import styled from 'styled-components'
 
 import Auther from '../components/Auther'
-
-import { rhythm, scale } from '../utils/typography'
 
 const Wrapper = styled.div`
   padding: 12px;
@@ -41,8 +37,6 @@ const Category = styled.div`
 class PostTemplate extends React.Component {
   render() {
     const post = this.props.data.esaPost
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    const { previous, next } = this.props.pathContext
 
     return (
       <Wrapper>
@@ -51,11 +45,7 @@ class PostTemplate extends React.Component {
         <Title style={{ margin: 0 }}>{post.name}</Title>
         <Auther post={post} />
         <Content dangerouslySetInnerHTML={{ __html: post.body_html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1)
-          }}
-        />
+        <hr />
       </Wrapper>
     )
   }
