@@ -1,12 +1,11 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
 import Auther from '../components/Auther'
-
-import { rhythm } from '../utils/typography'
+import Layout from '../components/Layout'
 
 const Cell = styled.div`
   padding: 24px;
@@ -28,7 +27,7 @@ class BlogIndex extends React.Component {
     const esaPosts = get(this, 'props.data.allEsaPost.edges')
 
     return (
-      <div style={{ paddingTop: 24 }}>
+      <Layout style={{ paddingTop: 24 }}>
         <Helmet title={siteTitle} />
         {esaPosts.map(({ node }) => {
           return (
@@ -38,7 +37,6 @@ class BlogIndex extends React.Component {
                 <h3
                   style={{
                     marginTop: 0,
-                    marginBottom: rhythm(1 / 4)
                   }}
                 >
                   {node.name}
@@ -52,7 +50,7 @@ class BlogIndex extends React.Component {
             </Cell>
           )
         })}
-      </div>
+      </Layout>
     )
   }
 }

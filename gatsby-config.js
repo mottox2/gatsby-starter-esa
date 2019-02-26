@@ -6,18 +6,15 @@ module.exports = {
     siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/'
   },
   pathPrefix: '/gatsby-starter-blog',
-  plugins: [
-    {
+  plugins: [{
       resolve: `gatsby-source-esa`,
       options: {
-        accessToken: process.env.ACCESS_TOKEN,
-        teamName: process.env.TEAM_NAME,
+        accessToken: process.env.ESA_TOKEN,
+        teamName: 'mottox2',
         q: `in:public`
       }
     },
     `gatsby-plugin-styled-components`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -25,12 +22,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography'
-      }
-    }
+    `gatsby-plugin-react-helmet`
   ]
 }
