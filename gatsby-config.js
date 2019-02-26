@@ -6,12 +6,11 @@ module.exports = {
     siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/'
   },
   pathPrefix: '/gatsby-starter-blog',
-  plugins: [
-    {
+  plugins: [{
       resolve: `gatsby-source-esa`,
       options: {
-        accessToken: process.env.ACCESS_TOKEN,
-        teamName: process.env.TEAM_NAME,
+        accessToken: process.env.ESA_TOKEN,
+        teamName: 'mottox2',
         q: `in:public`
       }
     },
